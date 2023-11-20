@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+    session_start();
 if (!empty($_POST)) {
     if (
         isset($_POST['name'], $_POST['email'], $_POST['password'])

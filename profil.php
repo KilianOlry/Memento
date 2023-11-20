@@ -1,5 +1,12 @@
+
 <?php
-    session_start();
+session_start();
+    if(!isset($_SESSION['user'])){
+        header('Location: register.php');
+        exit;
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +16,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Bonjour<?php echo $_SESSION['user']['name'] ?> <h1>
+<h1>Bonjour<?php echo $_SESSION['user']['name'] ?><h1>
 </body>
 </html>

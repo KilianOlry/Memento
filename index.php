@@ -1,10 +1,11 @@
 <?php
-
+session_start();
+require ('./connexion.php');
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,7 @@
 
     <main class="container-xl">
         <h1>memento</h1>
-            <a href="./new_post-it.php" title="Ajouter un post-it" class="add-post-it">add post-it</a>
+            <a href="./new_post-it.php" title="Ajouter un post-it" class="add-post-it">Nouveau post it</a>
         <div class="content">
         <article>
             <div class="top-post-it">
