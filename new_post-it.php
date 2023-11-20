@@ -1,4 +1,8 @@
 <?php
+
+    if (!isset($_SESSION['user'])) {
+        header('Location: login.php');
+    }
         if (!empty($_POST)) {
             if (isset($_POST['title'], $_POST['content'], $_POST['date'])
                 && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date'])) {
