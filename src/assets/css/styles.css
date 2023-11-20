@@ -89,6 +89,10 @@ i{
     justify-content: space-between;
     align-items: center;
 }
+.created{
+    text-align: center;
+    font-size: var(--fs-xs);
+}
 article{
     font-family: var(--fs-secondary);
     margin-top: 40px;

@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-
-
         require ('./connexion.php');
 
         $sql = 'SELECT * FROM post_it';
@@ -12,12 +10,6 @@ session_start();
 
         #On récupère les donnée (fetch ou fetchAll)
         $datas = $requete->fetchAll();
-
-
-
-
-
-
 ?>
 
 
@@ -40,11 +32,19 @@ session_start();
     ?>
 
     <main class="container-xl">
-        <h1>memento</h1>
+
+        <h1>memento <?php
+            if (isset($_SESSION['user'])) {
+                echo 'de '.$_SESSION['user']['name'];
+            }
+        ?></h1>
             <a href="./new_post-it.php" title="Ajouter un post-it" class="add-post-it">Nouveau post it</a>
         <div class="content">
+        
+
         <?php foreach($datas as $data): ?>
             <article>
+            <p class="created"><?= $data['date'] ?></p>
             <div class="top-post-it">
                 <h2><?=$data['title'] ?></h2>
                 <a href="delete.php<?php echo $data['id']?>" title="supprimer ce post-it" class="delete">
@@ -52,7 +52,7 @@ session_start();
                 </a>
             </div>
             <p class="description"><?php echo nl2br($data['content'])?></p>
-            <p class="date">A faire pour : <?=$data['date'] ?></p>
+            <p class="date">Créer le <?=$data['created_at'] ?></p>
         </article>
         <?php endforeach; ?>
         </div>
