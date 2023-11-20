@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Dancing Script', cursive;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    font-size: 25px;
+}
+header a:hover{
+    text-decoration: underline;
+    
+}
+header ul{
+    display: flex;
+    gap: 30px;
+}
+ul{
+    list-style: none;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
