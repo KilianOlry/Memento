@@ -1,27 +1,20 @@
+:root{
+    --color-post-it-yellow: #ffff80;
+    --color-blue: #1982C4;
+    --color-post-it-pink: #ff7eb9;
+    --colorpost-it-blue: #7afcff;
+}
+/* GLOBAL */
 *{
     margin: 0;
     padding: 0;
 }
+html{
+    font-size: 62.5%;
+}
+
 a{
     text-decoration: none;
-
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid black;
-    padding: 10px;
-    font-size: 25px;
-}
-header a:hover{
-    text-decoration: underline;
-    text-underline-offset: 8px;
-
-}
-header ul{
-    display: flex;
-    gap: 30px;
 }
 ul{
     list-style: none;
@@ -35,20 +28,72 @@ ul{
     margin: 0 auto;
     text-align: center;
 }
+/* HEADER  */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    font-size: 2rem;
+}
+header nav a:hover{
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+header ul{
+    display: flex;
+    gap: 3rem;
+}
+nav a{
+    color: var(--color-blue);
+}
+
 h1{
     margin: 20px 0;
+    font-size: 3rem;
     text-transform: capitalize;
 }
+h2, i{
+    display: inline;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+i{
+    color: var(--color-blue);
+}
 .add-post-it{
+    font-size: 2rem;
     padding: 10px;
-    background-color: blue;
+    background-color: var(--color-blue);
     color: white;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.top-post-it{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 article{
     font-family: 'Dancing Script', cursive;
-    margin-top: 20px;
+    margin-top: 40px;
+    width: 330px;
+    background-color: var(--color-yellow);
+    text-align: start;
+    padding: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background-color: var(--color-post-it-yellow);
+
 }
 .content{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+.todo{
+    margin: 10px 10px 0px 20px;
+    font-size: 2rem;
 }
