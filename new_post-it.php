@@ -45,24 +45,25 @@
     ?>
 
     <main class="bg-form">
-        <section class="container-xl">
-        <h1>Creation post it</h1>
-    <!-- <form action="#" method="post">
-            <div class="content">
-                <label for="title" class="">Titre du post it</label>
-                <input type="text" id="title" name="title" class="" placeholder="Nom du post it" required>
+        <div class="wrapper container-xl">
+        <form action="" method="post">
+            <h1>Création du nouveau post it</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Titre du post-it" name="title" required>
+                <i class='bx bxs-user'></i>
             </div>
-            <div class="content">
-                <label for="subject" class="">A faire pour</label>
-                <input type="date" id="subject" class="" name="date" placeholder="Objet du message" required>
+            <div class="input-box">
+                <input type="date" placeholder="Votre email" name="date" required>
+                <i class='bx bxs-user'></i>
             </div>
-            <div class="content">
-                <label for="message" class="">Votre message</label>
-                <textarea id="message" rows="6" name="content" class="" placeholder="Écrivez votre message"></textarea>
+            <div class="input-box">
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-            <button type="submit" class="">Valider</button>
-        </form> -->
-    </section>
+            <button type="submit" class="btn">Créer</button>
+        </form>
+    </div>
+
     </main>
 </body>
 </html>
