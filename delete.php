@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (!isset ($_SESSION['user'])) {
+    header('Location: login.php');
+}
+
 require ('./connexion.php');
     $req = "DELETE FROM post_it WHERE id=:id";
 
@@ -7,6 +13,6 @@ require ('./connexion.php');
     $insererRecette->execute([
         'id' => $_GET['id'],
        ]);
-       
+
     header('Location: index.php')
 ?>
