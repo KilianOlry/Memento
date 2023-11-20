@@ -110,7 +110,9 @@ article{
     font-size: var(--fs-xs);
     text-align: end;
 }
-
+p{
+    font-size: var(--fs-medium);
+}
 @media (width >= 576px){
     header{
         flex-direction: row;

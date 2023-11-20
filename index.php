@@ -1,7 +1,18 @@
 <?php
 session_start();
+
 require ('./connexion.php');
+$sql = 'SELECT * FROM post_it';
+
+#On éxécute directement la requête
+$requete = $bdd->query($sql);
+
+#On récupère les donnée (fetch ou fetchAll)
+$datas = $requete->fetchAll();
+
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -25,103 +36,19 @@ require ('./connexion.php');
         <h1>memento</h1>
             <a href="./new_post-it.php" title="Ajouter un post-it" class="add-post-it">Nouveau post it</a>
         <div class="content">
-        <article>
+        <?php foreach($datas as $data): ?>
+            <article>
             <div class="top-post-it">
-                <h2>titre du post-it</h2>
+                <h2><?=$data['title'] ?></h2>
                 <a href="/" title="supprimer ce post-it" class="delete">
                 <i class="fa-regular fa-circle-xmark"></i>
                 </a>
 
             </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
+            <p><?php echo nl2br($data['content'])?></p>
+            <p class="date"><?=$data['date'] ?></p>
         </article>
-        <article>
-            <div class="top-post-it">
-                <h2>titre du post-it</h2>
-                <a href="/" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-                </a>
-
-            </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
-        </article>
-        <article>
-            <div class="top-post-it">
-                <h2>titre du post-it</h2>
-                <a href="/" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-                </a>
-
-            </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
-        </article>
-        <article>
-            <div class="top-post-it">
-                <h2>titre du post-it</h2>
-                <a href="/" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-                </a>
-
-            </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
-        </article>
-        <article>
-            <div class="top-post-it">
-                <h2>titre du post-it</h2>
-                <a href="/" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-                </a>
-
-            </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
-        </article>
-        <article>
-            <div class="top-post-it">
-                <h2>titre du post-it</h2>
-                <a href="/" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-                </a>
-
-            </div>
-            <ul class="todo">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul>
-            <p class="date">16/12/2023</p>
-        </article>
-
+        <?php endforeach; ?>
         </div>
     </main>
 </body>

@@ -1,5 +1,30 @@
 <?php
-    
+        if (!empty($_POST)) {
+            if (isset($_POST['title'], $_POST['content'], $_POST['date'])
+                && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date'])) {
+
+                    $title = strip_tags($_POST['title']);
+                    $content = strip_tags($_POST['content']);
+
+
+                    $sql = "INSERT INTO post_it(title, content, date) VALUES(:title, :content, :date)";
+
+                    require ('./connexion.php');
+
+                    $query = $bdd->prepare($sql);
+            
+                    $query->execute([
+                        'title' => $title,
+                        'content' => $content,
+                        'date' => $_POST['date'],
+                    ]);
+
+                    
+                    
+            }else{
+                die('le formulaire est incomplet');
+            }
+        }
 ?>
 
 
@@ -29,15 +54,14 @@
                     placeholder="Nom du post it" required>
             </div>
             <div class="content">
-                <label for="subject" class=""></label>
-                <input type="text" id="subject"
-                    class=""
+                <label for="subject" class="">A faire pour</label>
+                <input type="date" id="subject" class="" name="date"
                     placeholder="Objet du message" required>
             </div>
             <div class="content">
                 <label for="message" class="block mb-2 text-sm font-medium text-green dark:text-gray-400">Votre
                     message</label>
-                <textarea id="message" rows="6"
+                <textarea id="message" rows="6" name="content"
                     class=""
                     placeholder="Écrivez votre message"></textarea>
             </div>
