@@ -38,10 +38,14 @@ session_start();
                 echo 'de '.$_SESSION['user']['name'];
             }
         ?></h1>
-            <a href="./new_post-it.php" title="Ajouter un post-it" class="add-post-it">Nouveau post it</a>
+        <?php
+            if (isset($_SESSION['user'])) {
+                echo "<a href='./new_post-it.php' title='Ajouter un post-it' class='add-post-it'>Nouveau post it</a>";
+            }
+        ?>
+            
         <div class="content">
         
-
         <?php foreach($datas as $data): ?>
             <article>
             <p class="created"><?= $data['date'] ?></p>
