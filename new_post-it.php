@@ -1,6 +1,7 @@
 <?php
 
-    if (!isset($_SESSION['user'])) {
+session_start();
+    if (!isset ($_SESSION['user'])) {
         header('Location: login.php');
     }
         if (!empty($_POST)) {

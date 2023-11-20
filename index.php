@@ -51,7 +51,7 @@ session_start();
             <p class="created"><?= $data['date'] ?></p>
             <div class="top-post-it">
                 <h2><?=$data['title'] ?></h2>
-                <a href="delete.php<?php echo $data['id']?>" title="supprimer ce post-it" class="delete">
+                <a href="delete.php?id=<?php echo $data['id']?>" title="supprimer ce post-it" class="delete">
                 <i class="fa-regular fa-circle-xmark"></i>
                 </a>
             </div>
