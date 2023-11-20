@@ -4,6 +4,7 @@
     --color-post-it-pink: #ff7eb9;
     --colorpost-it-blue: #7afcff;
     --fs-large: 3rem;
+    --fs-normal: 2.5rem;
     --fs-medium: 2rem;
     --fs-xs: 1.5rem;
     --fm-primary:'Roboto', sans-serif;
@@ -94,6 +95,7 @@ article{
     padding: 20px;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     background-color: var(--color-post-it-yellow);
+    position: relative;
 }
 .content{
     display: flex;
@@ -108,10 +110,16 @@ article{
 .date{
     margin: 10px 20px 0px 10px;
     font-size: var(--fs-xs);
-    text-align: end;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 p{
-    font-size: var(--fs-medium);
+    font-size: var(--fs-normal);
+}
+.description{
+    margin: 20px 0;
+
 }
 @media (width >= 576px){
     header{
