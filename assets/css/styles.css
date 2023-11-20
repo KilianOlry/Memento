@@ -4,9 +4,7 @@
 }
 a{
     text-decoration: none;
-}
-body{
-    font-family: 'Dancing Script', cursive;
+
 }
 header{
     display: flex;
@@ -18,7 +16,8 @@ header{
 }
 header a:hover{
     text-decoration: underline;
-    
+    text-underline-offset: 8px;
+
 }
 header ul{
     display: flex;
@@ -28,6 +27,28 @@ ul{
     list-style: none;
 }
 .container{
-    width: 1200px;
+    width: 80%;
     margin: 0 auto;
+}
+.container-xl{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+.add-post-it{
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
+article{
+    font-family: 'Dancing Script', cursive;
+    margin-top: 20px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
 }

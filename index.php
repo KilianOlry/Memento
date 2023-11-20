@@ -24,11 +24,10 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container-xl">
         <h1>memento</h1>
-        <button>
-            <a href="/">add post-it</a>
-        </button>
+            <a href="/" class="add-post-it">add post-it</a>
+        <div class="content">
         <article>
             <h2>titre du post-it</h2>
             <ul>
@@ -38,6 +37,52 @@
                 <li>test</li>
             </ul>
         </article>
+        <article>
+            <h2>titre du post-it</h2>
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+            </ul>
+        </article>
+        <article>
+            <h2>titre du post-it</h2>
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+            </ul>
+        </article>
+        <article>
+            <h2>titre du post-it</h2>
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+            </ul>
+        </article>
+        <article>
+            <h2>titre du post-it</h2>
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+            </ul>
+        </article>
+        <article>
+            <h2>titre du post-it</h2>
+            <ul>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+            </ul>
+        </article>
+        </div>
     </main>
 </body>
 </html>
