@@ -52,20 +52,21 @@
     require('./src/layout/header.php')
     ?>
 
-    <main class="container-xl">
-        <h1>Connexion</h1>
-
+    <main class="bg-form">
+        <div class="wrapper container-xl">
         <form action="" method="post">
-            <div class="content">
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Votre email" id="email">
+            <h1>Connexion</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Votre email" name="email" required>
+                <i class='bx bxs-user'></i>
             </div>
-            <div class="content">
-                <label for="password">Mot de passe</label>
-                <input type="text" name="password" placeholder="Votre password" id="password">
+            <div class="input-box">
+                <input type="password" placeholder="password" name="password" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-            <button type="submit">Valider</button>
+            <button type="submit" class="btn">Connexion</button>
         </form>
+    </div>
 
     </main>
 </body>

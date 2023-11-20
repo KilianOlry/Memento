@@ -1,14 +1,21 @@
 <?php
 session_start();
 
-require ('./connexion.php');
-$sql = 'SELECT * FROM post_it';
 
-#On éxécute directement la requête
-$requete = $bdd->query($sql);
 
-#On récupère les donnée (fetch ou fetchAll)
-$datas = $requete->fetchAll();
+        require ('./connexion.php');
+
+        $sql = 'SELECT * FROM post_it';
+
+        #On éxécute directement la requête
+        $requete = $bdd->query($sql);
+
+        #On récupère les donnée (fetch ou fetchAll)
+        $datas = $requete->fetchAll();
+
+
+
+
 
 
 ?>
@@ -45,7 +52,7 @@ $datas = $requete->fetchAll();
                 </a>
             </div>
             <p class="description"><?php echo nl2br($data['content'])?></p>
-            <p class="date"><?=$data['date'] ?></p>
+            <p class="date">A faire pour : <?=$data['date'] ?></p>
         </article>
         <?php endforeach; ?>
         </div>
