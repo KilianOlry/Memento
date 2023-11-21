@@ -84,13 +84,16 @@ i{
     border-radius: 5px;
     text-transform: capitalize;
 }
-.top-post-it{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.delete{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 .created{
     text-align: center;
+    margin: 0px 0px 15px 0;
+    text-decoration: underline;
+    text-underline-offset: 6px;
     font-size: var(--fs-xs);
 }
 article{

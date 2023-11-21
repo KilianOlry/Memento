@@ -24,6 +24,8 @@ session_start();
                         'date' => $_POST['date'],
                     ]);
 
+                    header('Location: index.php');
+
                     
                     
             }else{

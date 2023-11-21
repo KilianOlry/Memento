@@ -29,7 +29,7 @@
                     'email' => $user['email'],
                 ];
 
-                header('Location: profil.php');
+                header('Location: index.php');
                 
                 
         }else{
@@ -66,6 +66,7 @@
             </div>
             <button type="submit" class="btn">Connexion</button>
         </form>
+        
     </div>
 
     </main>

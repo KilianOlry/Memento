@@ -1,5 +1,5 @@
 <header class="container">
-    <a href="/index.php">Memento</a>
+    <a href="">Memento</a>
     <nav>
         <ul>
             <?php
