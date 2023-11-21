@@ -27,6 +27,7 @@
                 $_SESSION['user'] = [
                     'name' => $user['name'],
                     'email' => $user['email'],
+                    'id' => $user['id'],
                 ];
                 $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 

@@ -1,15 +1,15 @@
 <?php
 session_start();
-
         require ('./connexion.php');
+    if (isset($_SESSION['user'])){
+        $sql = 'SELECT * FROM post_it INNER JOIN user ON post_it.user_id = user.id WHERE user.id = '.$_SESSION['user']['id'];
+                #On éxécute directement la requête
+                $requete = $bdd->query($sql);
 
-        $sql = 'SELECT * FROM post_it INNER JOIN user ON post_it.user_id = user.id';
+                #On récupère les donnée (fetch ou fetchAll)
+                $datas = $requete->fetchAll();
+    }
 
-        #On éxécute directement la requête
-        $requete = $bdd->query($sql);
-
-        #On récupère les donnée (fetch ou fetchAll)
-        $datas = $requete->fetchAll();
 ?>
 
 

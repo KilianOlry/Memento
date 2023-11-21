@@ -23,7 +23,7 @@ session_start();
                     $content = strip_tags($_POST['content']);
 
 
-                    $sql = "INSERT INTO post_it(title, content, date) VALUES(:title, :content, :date)";
+                    $sql = "INSERT INTO post_it(title, content, date, user_id) VALUES(:title, :content, :date, :user_id)";
 
                     require ('./connexion.php');
 
@@ -33,6 +33,7 @@ session_start();
                         'title' => $title,
                         'content' => $content,
                         'date' => $_POST['date'],
+                        'user_id' => $_SESSION['user']['id'],
                     ]);
 
                     header('Location: index.php');
