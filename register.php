@@ -6,36 +6,45 @@ if (!empty($_POST)) {
         isset($_POST['name'], $_POST['email'], $_POST['password'])
         && !empty($_POST['name'] && !empty($_POST['email']) && !empty($_POST['password']))
     ) {
-
+        $_SESSION['error'] = [];
         $pseudo = strip_tags($_POST['name']);
 
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            die("Ce n'est pas un email");
+            $_SESSION['error'][] = "Ce n'est pas un email";
+        }
+        
+        
+        if (strlen($_POST['password']) <= 8) {
+            $_SESSION['error'][] = "Le mot de passe est trop court";
         }
 
-        $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        if ($_SESSION['error'] === []) {
+            $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
-        $sql = "INSERT INTO user(name, email, password) VALUES(:pseudo,  :email, :password)";
-
-        require ('./connexion.php');
-        $query = $bdd->prepare($sql);
-
-        $query->execute([
-            'pseudo' => $pseudo,
+            $sql = "INSERT INTO user(name, email, password) VALUES(:pseudo,  :email, :password)";
+    
+            require ('./connexion.php');
+            $query = $bdd->prepare($sql);
+    
+            $query->execute([
+                'pseudo' => $pseudo,
+                'email' => $_POST['email'],
+                'password' => $pass,
+            ]);
+    
+            $_SESSION['user'] = [
+            'name' => $pseudo,
             'email' => $_POST['email'],
-            'password' => $pass,
-        ]);
+           ];
+    
+           header('Location: login.php');
+            
+        }
 
-        $_SESSION['user'] = [
-        'name' => $pseudo,
-        'email' => $_POST['email'],
-       ];
-
-       header('Location: login.php');
     } else {
 
-        die('le formulaire est incomplet');
+        $_SESSION['error'] = ['le formulaire est incomplet'];
     }
 }
 ?>
@@ -75,6 +84,16 @@ if (!empty($_POST)) {
             <div class="input-box">
                 <input type="password" placeholder="Mot de passe" name="password" required>
                 <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <p style="color: red;">
+                <?php if (isset($_SESSION['error'])) {
+                    foreach ($_SESSION['error'] as $item) {
+                        echo "<p style='color: red'>".$item.'</p>';
+                    }
+                    unset($_SESSION['error']);
+                } 
+                ?></p>
             </div>
             <button type="submit" class="btn">S'inscrire</button>
         </form>
