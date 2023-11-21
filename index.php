@@ -3,7 +3,7 @@ session_start();
 
         require ('./connexion.php');
 
-        $sql = 'SELECT * FROM post_it';
+        $sql = 'SELECT * FROM post_it INNER JOIN user ON post_it.user_id = user.id';
 
         #On éxécute directement la requête
         $requete = $bdd->query($sql);
