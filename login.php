@@ -28,6 +28,8 @@
                     'name' => $user['name'],
                     'email' => $user['email'],
                 ];
+                $_SESSION['token'] = md5(uniqid(mt_rand(), true));
+
 
                 header('Location: index.php');
                 
