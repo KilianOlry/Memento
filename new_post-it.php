@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+
     if (!isset ($_SESSION['user'])) {
         header('Location: login.php');
     }
@@ -8,11 +10,13 @@ session_start();
             if (isset($_POST['title'], $_POST['content'], $_POST['date'])
                 && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['date'])) {
 
-                    if (!$token || $token !== $_SESSION['token']) {
-                        // return 405 http status code
-                        header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
-                        exit;
-                    }
+                    
+                $token = $_POST['token'];
+
+                if (!$token || $token !== $_SESSION['token']) {
+                    header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+                    exit;
+                }
 
 
                     $title = strip_tags($_POST['title']);
