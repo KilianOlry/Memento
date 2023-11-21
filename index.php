@@ -1,14 +1,18 @@
 <?php
 session_start();
-        require ('./connexion.php');
-    if (isset($_SESSION['user'])){
-        $sql = 'SELECT * FROM post_it INNER JOIN user ON post_it.user_id = user.id WHERE user.id = '.$_SESSION['user']['id'];
+
+    require ('./connexion.php');
+    if (!isset($_SESSION['user'])){
+        header('Location: login.php');
+    }else{
+        $sql = 'SELECT p.id, p.title, p.content, p.date, p.created_at FROM post_it AS p INNER JOIN user AS u ON p.user_id = u.id WHERE u.id = '.$_SESSION['user']['id'];
                 #On éxécute directement la requête
                 $requete = $bdd->query($sql);
-
+    
                 #On récupère les donnée (fetch ou fetchAll)
                 $datas = $requete->fetchAll();
     }
+
 
 ?>
 
@@ -34,9 +38,8 @@ session_start();
     <main class="container-xl">
 
         <h1>memento <?php
-            if (isset($_SESSION['user'])) {
+            
                 echo 'de '.$_SESSION['user']['name'];
-            }
         ?></h1>
         <?php
             if (isset($_SESSION['user'])) {

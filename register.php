@@ -10,7 +10,7 @@ if (!empty($_POST)) {
         $pseudo = strip_tags($_POST['name']);
 
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            die("email incorrect");
+            die("Ce n'est pas un email");
         }
 
         $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -32,7 +32,7 @@ if (!empty($_POST)) {
         'email' => $_POST['email'],
        ];
 
-       header('Location: profil.php');
+       header('Location: login.php');
     } else {
 
         die('le formulaire est incomplet');

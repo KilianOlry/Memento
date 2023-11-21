@@ -6,11 +6,11 @@ if (!isset ($_SESSION['user'])) {
 }
 
 require ('./connexion.php');
-    $req = "DELETE FROM post_it WHERE id=:id";
+    $sql = "DELETE FROM post_it WHERE id=:id";
 
-    $insererRecette = $bdd->prepare($req);
+    $query = $bdd->prepare($sql);
     
-    $insererRecette->execute([
+    $query->execute([
         'id' => $_GET['id'],
        ]);
 
