@@ -1,9 +1,10 @@
 /* GLOBAL */
 :root {
   --color-post-it-yellow: #ffff80;
-  --color-blue: #1982C4;
+  --color-blue: #334155;
   --color-post-it-pink: #ff7eb9;
   --colorpost-it-blue: #7afcff;
+  --bg-color: #f1f5f9;
   --fs-large: 3rem;
   --fs-normal: 2.5rem;
   --fs-medium: 2rem;
@@ -21,6 +22,10 @@
 html {
   font-size: 62.5%;
   font-family: var(--fm-primary);
+}
+
+body {
+  background-color: var(--bg-color);
 }
 
 a {
@@ -65,10 +70,10 @@ i {
 
 header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
   border-bottom: 1px solid gray;
-  padding: 10px;
+  padding: 1.5rem;
   font-size: 2rem;
   gap: 15px;
 }
@@ -83,8 +88,14 @@ header ul {
   gap: 3rem;
 }
 
-nav a {
+header a {
   color: var(--color-blue);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .add-post-it {
@@ -231,11 +242,6 @@ textarea {
 }
 
 @media (width >= 576px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
-  }
   nav {
     margin-top: 0;
   }

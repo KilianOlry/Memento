@@ -1,12 +1,14 @@
-<h1>memento <?php echo 'de ' . $_SESSION['user']['name']; ?></h1>
+<div class="head">
+    <h1>memento <?php echo 'de ' . $_SESSION['user']['name']; ?></h1>
 
-<?php
-if (isset($_SESSION['user'])) {
-    echo "<a href='./new_post-it.php' title='Ajouter un post-it' class='add-post-it'>Nouveau post it</a>";
-} else {
-    echo "<a href='?page=login.php' title='Ajouter un post-it' class='add-post-it'>Nouveau post it</a>";
-}
-?>
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo "<a href='./new_post-it.php' title='Ajouter un post-it' class='add-post-it'>Nouveau post it</a>";
+    } else {
+        echo "<a href='?page=login.php' title='Ajouter un post-it' class='add-post-it'>Nouveau post it</a>";
+    }
+    ?>
+</div>
 
 <div class="content">
 

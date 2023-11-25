@@ -1,4 +1,6 @@
-.add-post-it{
+.head{
+    @include flex-ai-center-fdc;
+}.add-post-it{
     font-size: var(--fs-medium);
     padding: 10px;
     background-color: var(--color-blue);

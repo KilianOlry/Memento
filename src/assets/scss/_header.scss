@@ -1,7 +1,7 @@
 header{
-    @include flex-ai-center-fdc;
+    @include flex-jcbetween-ai-center;
     border-bottom: 1px solid gray;
-    padding: 10px;
+    padding: 1.5rem;
     font-size: 2rem;
     gap: 15px;
 }
@@ -13,6 +13,6 @@ header ul{
     display: flex;
     gap: 3rem;
 }
-nav a{
+header a{
     color: var(--color-blue);
 }
