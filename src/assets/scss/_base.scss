@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: var(--fm-primary);
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+    margin-top: 0;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.container-xl{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    margin: 20px 0;
+    font-size: var(--fs-large);
+    text-transform: capitalize;
+}
+h2, i{
+    font-size: var(--fs-large);
+}
+h2{
+    display: inline;
+    text-transform: capitalize;
+}
+i{
+    color: var(--color-blue);
+}

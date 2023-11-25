@@ -6,6 +6,8 @@ function selectPostItFromUser(){
     $sql = 'SELECT p.id, p.title, p.content, p.date, p.created_at FROM post_it AS p INNER JOIN user AS u ON p.user_id = u.id WHERE u.id = '.$_SESSION['user']['id'];
     $requete = $bdd->query($sql);
     $datas = $requete->fetchAll();
+
+    return $datas;
 }
 // Register User
 function registerUserIntoDatabase($pseudo, $email, $passHash){

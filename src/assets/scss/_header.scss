@@ -1,0 +1,18 @@
+header{
+    @include flex-ai-center-fdc;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-size: 2rem;
+    gap: 15px;
+}
+header nav a:hover{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+header ul{
+    display: flex;
+    gap: 3rem;
+}
+nav a{
+    color: var(--color-blue);
+}

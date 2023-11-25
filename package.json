@@ -1,0 +1,22 @@
+{
+  "name": "memento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass -w ./src/assets/scss:./src/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KilianOlry/Memento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KilianOlry/Memento/issues"
+  },
+  "homepage": "https://github.com/KilianOlry/Memento#readme",
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}

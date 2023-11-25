@@ -1,0 +1,26 @@
+@mixin flex-jccenter-ai-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-jccenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-jcbetween-ai-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-ai-center-fdc {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flex-ai-center {
+    display: flex;
+    align-items: center;
+}
