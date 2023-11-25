@@ -1,9 +1,7 @@
 header{
     @include flex-jcbetween-ai-center;
     border-bottom: 1px solid gray;
-    padding: 1.5rem;
     font-size: 2rem;
-    gap: 15px;
 }
 header nav a:hover{
     text-decoration: underline;
@@ -12,6 +10,9 @@ header nav a:hover{
 header ul{
     display: flex;
     gap: 3rem;
+}
+header img{
+    width: 10rem;
 }
 header a{
     color: var(--color-blue);

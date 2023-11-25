@@ -1,5 +1,7 @@
 <header class="container">
-    <a href="?page=homepage">Memento</a>
+    <a href="?page=homepage" title="Acceuil">
+        <img src="./src/assets/images/logo.png" alt="Logo du site Internet">
+    </a>
     <nav>
         <ul>
             <?php
