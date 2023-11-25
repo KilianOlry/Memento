@@ -3,15 +3,9 @@
 if (!isset ($_SESSION['user'])) {
     header('Location: login.php');
 }
-
-require ('./connexion.php');
-    $sql = "DELETE FROM post_it WHERE id=:id";
-
-    $query = $bdd->prepare($sql);
+    $id = $_GET['id'];
     
-    $query->execute([
-        'id' => $_GET['id'],
-       ]);
+    deletePostIt($id);
 
     header('Location: index.php')
 ?>

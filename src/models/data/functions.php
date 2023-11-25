@@ -35,30 +35,29 @@ function loginUser(){
     return $user;
 }
 
-// Validate Input
+// Add post-it
 
-function validateInput($name)
-{
-    $cleanInput = strip_tags($name);
-    if (empty($cleanInput)) {
-        throw new Exception('Le champ ne peut pas être vide.');
-    }
-    return $cleanInput;
+function addPostIt($title, $content, $date, $id){
+    global $bdd;
+    
+    $sql = "INSERT INTO post_it(title, content, date, user_id) VALUES(:title, :content, :date, :user_id)";
+    $query = $bdd->prepare($sql);
+    $query->execute([
+        'title' => $title,
+        'content' => $content,
+        'date' => $date,
+        'user_id' => $id,
+    ]);
 }
 
-function validateEmail($email)
-{
-    $cleanEmail = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if ($cleanEmail === false) {
-        throw new Exception("Ce n'est pas une adresse email valide.");
-    }
-    return $cleanEmail;
+function deletePostIt($id){
+    global $bdd;
+
+    $sql = "DELETE FROM post_it WHERE id=:id";
+    $query = $bdd->prepare($sql);
+    $query->execute([
+        'id' => $id,
+       ]);
 }
 
-function validatePassword($password)
-{
-    if (strlen($password) <= 8) {
-        throw new Exception('Le mot de passe est trop court.');
-    }
-    return $password;
-}
+
