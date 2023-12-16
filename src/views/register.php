@@ -6,12 +6,12 @@
                 <input type="text" placeholder="Votre nom" name="name" >
                 <i class='bx bxs-user'></i>
             </div>
-            <div class="input-box">
-                <input type="text" placeholder="Votre email" name="email" required>
+            <div class="input-box" id="ID_msgEmail">
+                <input type="text" placeholder="Votre email" name="email" id="ID_email">
                 <i class='bx bxs-user'></i>
             </div>
-            <div class="input-box">
-                <input type="password" placeholder="Mot de passe" name="password" required>
+            <div class="input-box" id="ID_msgPassword">
+                <input type="password" placeholder="Mot de passe" id="ID_password" name="password">
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="input-box">
@@ -24,7 +24,7 @@
                 } 
                 ?></p>
             </div>
-            <button type="submit" class="btn">S'inscrire</button>
+            <button type="submit" class="btn" id="ID_submit">S'inscrire</button>
         </form>
     </div>
 </div>
