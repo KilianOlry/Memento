@@ -190,6 +190,10 @@ p {
   text-transform: capitalize;
 }
 
+.wrapper p {
+  font-size: 17px;
+}
+
 .wrapper .input-box {
   position: relative;
   width: 100%;
