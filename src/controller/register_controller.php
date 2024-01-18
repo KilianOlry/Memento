@@ -12,12 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $passHash = password_hash($password, PASSWORD_DEFAULT);
         registerUserIntoDatabase($name, $email, $passHash);
 
-        $_SESSION['user'] = [
-            'name' => $name,
-            'email' => $email,
-        ];
 
-        header('Location: login.php');
+        header('Location: ?page=login.php');
         exit();
 
     } catch (Exception $e) {

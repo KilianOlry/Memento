@@ -1,6 +1,11 @@
 <?php
     require ('./src/views/login.php');
 
+    if(isset($_SESSION['user'])){
+        header('Location: ?page=index.php');
+        exit();
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['email'], $_POST['password'])
@@ -26,7 +31,7 @@
             $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
 
-            header('Location: index.php');
+            header('Location: ?page=index.php');
             
             
     }else{
