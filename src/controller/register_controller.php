@@ -1,5 +1,5 @@
 <?php
-require('./src/views/register.php');
+require('./public/views/register.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = validateEmail($_POST['email']);
         $password = validatePassword($_POST['password']);
 
-        // Si nous arrivons ici, toutes les validations ont réussi
 
         $passHash = password_hash($password, PASSWORD_DEFAULT);
         registerUserIntoDatabase($name, $email, $passHash);

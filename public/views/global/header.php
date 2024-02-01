@@ -1,6 +1,6 @@
 <header class="container">
     <a href="?page=homepage" title="Acceuil">
-        <img src="./src/assets/images/logo.png" alt="Logo du site Internet">
+        <img src="./public/assets/images/logo.png" alt="Logo du site Internet">
     </a>
     <nav>
         <ul>

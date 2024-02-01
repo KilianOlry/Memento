@@ -14,6 +14,6 @@
         $route = $_GET['page'];
     }
     
-    require ('./src/views/global/base.php');
+    require ('./public/views/global/base.php');
 
 ?>

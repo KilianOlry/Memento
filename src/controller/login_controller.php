@@ -1,5 +1,5 @@
 <?php
-    require ('./src/views/login.php');
+    require ('./public/views/login.php');
 
     if(isset($_SESSION['user'])){
         header('Location: ?page=index.php');

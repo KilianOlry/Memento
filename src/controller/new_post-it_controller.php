@@ -3,7 +3,7 @@
     if (!isset ($_SESSION['user'])) {
         header('Location: login.php');
     }
-    require ('./src/views/new_post-it.php');
+    require ('./public/views/new_post-it.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {

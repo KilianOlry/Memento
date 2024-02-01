@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])){
 }
 $datas = selectPostItFromUser();
 
-require('./src/views/homepage.php');
+require('./public/views/homepage.php');
 
 
 ?>
