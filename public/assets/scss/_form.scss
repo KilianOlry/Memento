@@ -1,7 +1,7 @@
 .bg-form{
     @include flex-jccenter-ai-center;
     min-height: 95vh;
-    background:url(../images/bg.jpg);
+    background:url("../images/bg.webp");
     background-size: cover;
     background-position: center;
 }
