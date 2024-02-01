@@ -15,9 +15,12 @@
     <?php foreach ($datas as $data) : ?>
         <article>
             <p class="created"><?= htmlspecialchars($data['date']) ?></p>
-            <a href="?page=delete&id=<?= htmlspecialchars($data['id'])  ?>" title="supprimer ce post-it" class="delete">
-                <i class="fa-regular fa-circle-xmark"></i>
-            </a>
+                <form action="" method="post" class="delete">
+                    <input type="number" name="id" hidden value="<?= $data['id'] ?>">
+                    <button type="submit">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </button>
+                </form>
             <div class="top-post-it">
                 <h2><?= htmlspecialchars($data['title']) ?></h2>
             </div>

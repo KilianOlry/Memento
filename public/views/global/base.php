@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <title>Kilian.O || Memento</title>
 </head>
+
 <body>
 
     <?php
-        require ('./public/views/global/header.php')
+    require('./public/views/global/header.php')
     ?>
 
     <main class="<?php $route === ('login' || 'register' || 'new_post-it') ? '' : 'container-xl'; ?>">
 
-    <?php
-        require './src/controller/'. $route . '_controller.php';
-    ?>
+        <?php
+        require './src/controller/' . $route . '_controller.php';
+        ?>
 
     </main>
     <script src="./src/assets/js/script.js"></script>
@@ -40,4 +42,5 @@
         ?>
     </script>
 </body>
+
 </html>

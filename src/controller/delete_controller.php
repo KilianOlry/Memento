@@ -1,11 +1,9 @@
 <?php
 
-if (!isset ($_SESSION['user'])) {
-    header('Location: login.php');
-}
-    $id = $_GET['id'];
-    
-    deletePostIt($id);
+    $id = $_POST['id'];
+    if (number_format($id)) {
+        deletePostIt($id);
+    }
 
-    header('Location: index.php')
+    header('Location: index.php');
 ?>
