@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./src/assets/images/logo.png" alt="Memento" width="100px"/>
+  <img src="./public/assets/images/logo.png" alt="Memento" width="100px"/>
 
 </div>
 
@@ -8,7 +8,7 @@
 ## Performances ##
 
 <div align="center" id="top"> 
-  <img src="./src/assets/images/performances.png" alt="Memento" width="330px"/>
+  <img src="./public/assets/images/performances.png" alt="Memento" width="330px"/>
 
 </div>
 

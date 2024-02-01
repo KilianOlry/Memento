@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $passHash = password_hash($password, PASSWORD_DEFAULT);
         registerUserIntoDatabase($name, $email, $passHash);
 
+        $_SESSION['status'] = 'success';
+        $_SESSION['message'] = 'Votre compte est crée veuillez vous connecter';
 
-        header('Location: ?page=login.php');
-        exit();
 
     } catch (Exception $e) {
         $error = $e->getMessage();

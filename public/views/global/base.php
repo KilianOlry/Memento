@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/817262485e.js" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- CDN CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" />
+    <!-- CDN TOASTR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <title>Kilian.O || Memento</title>
 </head>
 <body>
@@ -25,5 +31,13 @@
 
     </main>
     <script src="./src/assets/js/script.js"></script>
+
+    <script>
+        <?php if (!empty($_SESSION['status'])) { ?>
+            toastr.<?= $_SESSION['status'] ?>("<?= $_SESSION['message'] ?>")
+        <?php }
+        unset($_SESSION['status']);
+        ?>
+    </script>
 </body>
 </html>
