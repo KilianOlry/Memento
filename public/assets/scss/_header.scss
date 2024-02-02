@@ -1,19 +1,50 @@
-header{
+header {
+  background-color: var(--bg-color);
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 50;
+  div{
     @include flex-jcbetween-ai-center;
-    border-bottom: 1px solid gray;
-    font-size: 2rem;
-}
-header nav a:hover{
-    text-decoration: underline;
-    text-underline-offset: 5px;
-}
-header ul{
+  }
+  nav{
+    display: flex;
+  }
+  ul {
     display: flex;
     gap: 3rem;
-}
-header img{
+    a {
+      color: var(--color-blue);
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+    }
+  }
+  img {
     width: 10rem;
+  }
 }
-header a{
-    color: var(--color-blue);
+#toggleBtn{
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    nav ul {
+      display: none;
+    }
+    #toggleBtn{
+        display: flex;
+        cursor: pointer;
+  }
+  .test{
+    position: absolute;
+    top: 10rem;
+    background-color: var(--bg-color);
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
 }

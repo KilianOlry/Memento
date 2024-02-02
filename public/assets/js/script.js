@@ -1,3 +1,12 @@
+const btnToggle = document.getElementById('toggleBtn');
+const menu = document.getElementById('menu');
+
+btnToggle.addEventListener('click', () =>{
+    menu.classList.toggle('test');
+})
+
+
+
 let email = document.getElementById('ID_email');
 let password = document.getElementById('ID_password');
 let containerMsgEmail = document.getElementById('ID_msgEmail');

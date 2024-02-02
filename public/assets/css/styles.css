@@ -68,32 +68,64 @@ i {
   color: var(--color-blue);
 }
 
+main {
+  padding-top: 3rem;
+}
+
 header {
+  background-color: var(--bg-color);
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 50;
+}
+header div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid gray;
-  font-size: 2rem;
 }
-
-header nav a:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
+header nav {
+  display: flex;
 }
-
 header ul {
   display: flex;
   gap: 3rem;
 }
-
+header ul a {
+  color: var(--color-blue);
+}
+header ul a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 header img {
   width: 10rem;
 }
 
-header a {
-  color: var(--color-blue);
+#toggleBtn {
+  display: none;
 }
 
+@media screen and (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+  #toggleBtn {
+    display: flex;
+    cursor: pointer;
+  }
+  .test {
+    position: absolute;
+    top: 10rem;
+    background-color: var(--bg-color);
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
 .head {
   display: flex;
   align-items: center;
@@ -141,7 +173,7 @@ article {
   background-color: var(--color-post-it-yellow);
   position: relative;
 }
-article button {
+article form button {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -172,7 +204,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  min-height: 100vh;
   background: url("../images/bg.webp");
   background-size: cover;
   background-position: center;
