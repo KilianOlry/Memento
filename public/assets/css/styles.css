@@ -141,7 +141,7 @@ article {
   background-color: var(--color-post-it-yellow);
   position: relative;
 }
-article form button {
+article button {
   background: transparent;
   border: none;
   cursor: pointer;
