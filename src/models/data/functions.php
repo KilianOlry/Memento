@@ -50,13 +50,14 @@ function addPostIt($title, $content, $date, $id){
     ]);
 }
 
-function deletePostIt($id){
+function deletePostIt($id, $userId){
     global $bdd;
 
-    $sql = "DELETE FROM post_it WHERE id=:id";
+    $sql = "DELETE FROM post_it WHERE user_id = :user_id AND id = :post_id";
     $query = $bdd->prepare($sql);
     $query->execute([
-        'id' => $id,
+        'user_id' => $userId,
+        'post_id' => $id,
        ]);
 }
 

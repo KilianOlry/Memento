@@ -8,6 +8,7 @@ header {
   z-index: 50;
   div{
     @include flex-jcbetween-ai-center;
+    border-bottom: 1px solid var(--color-blue);
   }
   nav{
     display: flex;
@@ -46,5 +47,6 @@ header {
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    border-radius: .5rem;
 }
 }

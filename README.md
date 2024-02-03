@@ -1,16 +1,15 @@
 <div align="center" id="top"> 
-  <img src="./public/assets/images/logo.png" alt="Memento" width="100px"/>
+  <img src="./public/assets/images/logo.png" width='100px' alt="Memento" />
 
 </div>
 
 <h1 align="center">Memento</h1>
 
-## Performances ##
+<p align="center">
 
-<div align="center" id="top"> 
-  <img src="./public/assets/images/performances.png" alt="Memento" width="330px"/>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/KilianOlry/memento?color=56BEB8">
 
-</div>
+</p>
 
 <br>
 
@@ -20,14 +19,13 @@ Projet de création de post-it
 
 ## Technologies ##
 
-The following tools were used in this project:
+- [HTML]
+- [SASS]
+- [JAVASCRIPT]
+- [PHP]
+- [MYSQL]
 
-- HTML
-- SCSS
-- PHP
-- MYSQL
-
-## Starting the project ##
+## Starting ##
 
 ```bash
 # Clone this project
@@ -40,8 +38,10 @@ $ cd memento
 $ npm install
 
 # Run script sass
-$ "sass" : "sass -w ./src/assets/scss:./src/assets/css"
+$ "sass" : "sass -w ./public/assets/scss:./public/assets/css"
 
 # Install Database
 $ drag and drop the file.gzip into phpMyAdmin
 ```
+
+<a href="#top">Back to top</a>
