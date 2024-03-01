@@ -1,23 +1,23 @@
 <?php
-require('./public/views/login.php');
-
 if (isset($_SESSION['user'])) {
-    header('Location: ?page=index.php');
+    header('Location: ?page=homepage');
     exit();
 }
 
+require('./public/views/login.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (
-        isset($_POST['email'], $_POST['password'])
-        && !empty($_POST['email']) && !empty($_POST['password'])
-    ) {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-        $email = validateEmail($_POST['email']);
+        $form = new FormControll;
+        $email = $form->validateEmail($_POST['email']);
 
-        $user = loginUser($email);
+        $userManager = new UserManager();
+        $user = $userManager->getOne($email, $db->getPdo());
 
         if ($user) {
+
             if (password_verify($_POST['password'], $user['password'])) {
                 $_SESSION['user'] = [
                     'name' => $user['name'],
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ];
                 $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
-                header('Location: ?page=index.php');
+                header('Location: index.php');
             } else {
                 $_SESSION['status'] = 'error';
                 $_SESSION['message'] = 'Mot de passe incorrect';

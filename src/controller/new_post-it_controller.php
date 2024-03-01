@@ -1,15 +1,19 @@
 <?php
 
-    if (!isset ($_SESSION['user'])) {
-        header('Location: login.php');
+    if (empty ($_SESSION['user'])) {
+        header('Location: ?page=login');
     }
     require ('./public/views/new_post-it.php');
 
+    $form = new FormControll;
+    $postit= new PostItManager();
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
-            $title = validateInput($_POST['title']);
-            $content = validateInput($_POST['content']);
-            $date = validateInput($_POST['date']);
+
+            $title = $form->validateInput($_POST['title']);
+            $content = $form->validateInput($_POST['content']);
+            $date = $form->validateInput($_POST['date']);
             $id = $_SESSION['user']['id'];
 
             $token = $_POST['token'];
@@ -18,7 +22,7 @@
                 header($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
                 exit;
             }
-            addPostIt($title, $content, $date, $id);
+            $postit->insertPostIt($title, $content, $date, $id, $db->getPdo());
 
         } catch (\Throwable $th) {
             //throw $th;

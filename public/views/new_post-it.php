@@ -1,5 +1,5 @@
-    <div class="bg-form">
-        <div class="wrapper container-xl">
+<div class="bg-form">
+    <div class="wrapper container-xl">
         <form action="" method="post">
             <h1>Création du nouveau post it</h1>
             <div class="input-box">

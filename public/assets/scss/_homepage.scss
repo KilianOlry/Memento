@@ -1,5 +1,6 @@
 .head{
     @include flex-ai-center-fdc;
+    margin-top: 5rem;
 }.add-post-it{
     font-size: var(--fs-medium);
     padding: 10px;

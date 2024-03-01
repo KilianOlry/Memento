@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Application création de post-it">
     <link rel="stylesheet" href="./public/assets/css/styles.css">
-    <link rel="shortcut icon" href="https://notion-emojis.s3-us-west-2.amazonaws.com/prod/svg-twitter/1f9e0.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./public/assets/images/logoKO.webp" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/817262485e.js" crossorigin="anonymous"></script>
@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet" />
     <!-- CDN TOASTR -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <title>Kilian.O || Memento</title>
+    <title>Memento | KO</title>
 </head>
 
 <body>

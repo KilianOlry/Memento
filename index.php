@@ -1,19 +1,16 @@
 <?php
 
-    session_start();
-    
-    require ('./src/models/connexion.php');
-    require ('./src/models/data/functions.php');
-    require ('./src/models/data/functions_input.php');
+session_start();
 
+require_once './src/imports/class.php';
 
-    $availablesRoutes = ['homepage', 'login', 'logout', 'register', 'new_post-it', 'delete'];
-    $route = 'homepage';
+$db = new DbConnect('memento', 'localhost', 'root', '');
 
-    if (isset($_GET['page']) && in_array($_GET['page'],$availablesRoutes)) {
-        $route = $_GET['page'];
-    }
-    
-    require ('./public/views/global/base.php');
+$availablesRoutes = ['homepage', 'login', 'logout', 'register', 'new_post-it', 'delete'];
+$route = 'homepage';
 
-?>
+if (isset($_GET['page']) && in_array($_GET['page'], $availablesRoutes)) {
+    $route = $_GET['page'];
+}
+
+require('./public/views/global/base.php');
